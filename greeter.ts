@@ -13,7 +13,7 @@ interface Person{
 }
 
 
-function greeter(person: string){
+function greeter(person: Person){
   return "Hello, " + person.firstName + " " + person.lastName;
 }
 

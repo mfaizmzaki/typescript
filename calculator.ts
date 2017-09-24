@@ -1,11 +1,11 @@
-class Calculator{
+export class Calculator{
 
-  private model = 'Casio';
-
+  private _model = 'Casio'; //underscore as naming convention utk private property yg ada get/set method
+  
   constructor(public x: number, public y: number){} //explicitly stating public is a shorthand so kita tkyah guna this.x = x ...
 
   addNumber(){
-    console.log("Model " + this.model + " ");
+    console.log("Model " + this._model + " ");
     console.log(this.x + this.y);
   }
 
@@ -21,11 +21,10 @@ class Calculator{
     console.log(this.x - this.y);
   }
 
-  changeModel(name: string){
+  set model(name: string){  //set method utk typescript. sama juga kalau get.
+    if (name.length < 3){
+      throw new Error('Model name must be more than 3 characters');
+    }
     this.model = name;
   }
 }
-
-let calc = new Calculator(6,2); //object declaration
-calc.changeModel('Samsung');
-calc.addNumber();

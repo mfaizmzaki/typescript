@@ -1,4 +1,4 @@
-
+import {Calculator} from './calculator';
 //variable declaration can be done using var or let
 //var scope in Javascript is tied to the nearest function defined.
 //let scope only in the nearest block instead function.
@@ -46,3 +46,5 @@ let arrowFunc = () => {
 }
 doSomething();
 arrowFunc();
+let kirakira = new Calculator(10,4);
+kirakira.addNumber();

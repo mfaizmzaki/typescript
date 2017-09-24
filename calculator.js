@@ -1,27 +1,29 @@
-var Calculator = /** @class */ (function () {
-    function Calculator(x, y) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Calculator {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.model = 'Casio';
+        this._model = 'Casio'; //underscore as naming convention utk private property yg ada get/set method
     } //explicitly stating public is a shorthand so kita tkyah guna this.x = x ...
-    Calculator.prototype.addNumber = function () {
-        console.log("Model " + this.model + " ");
+    addNumber() {
+        console.log("Model " + this._model + " ");
         console.log(this.x + this.y);
-    };
-    Calculator.prototype.divideNumber = function () {
+    }
+    divideNumber() {
         console.log(this.x / this.y);
-    };
-    Calculator.prototype.multiplyNumber = function () {
+    }
+    multiplyNumber() {
         console.log(this.x * this.y);
-    };
-    Calculator.prototype.minusNumber = function () {
+    }
+    minusNumber() {
         console.log(this.x - this.y);
-    };
-    Calculator.prototype.changeModel = function (name) {
+    }
+    set model(name) {
+        if (name.length < 3) {
+            throw new Error('Model name must be more than 3 characters');
+        }
         this.model = name;
-    };
-    return Calculator;
-}());
-var calc = new Calculator(6, 2); //object declaration
-calc.changeModel('Samsung');
-calc.addNumber();
+    }
+}
+exports.Calculator = Calculator;

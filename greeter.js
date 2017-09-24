@@ -1,14 +1,14 @@
-var Student = /** @class */ (function () {
-    function Student(firstName, middleInitial, lastName) {
+"use strict";
+class Student {
+    constructor(firstName, middleInitial, lastName) {
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
         this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
-    return Student;
-}());
+}
 function greeter(person) {
-    return "Hello, " + person.fullName;
+    return "Hello, " + person.firstName + " " + person.lastName;
 }
 var user = new Student("Faiz", "bin", "Zaki");
-document.body.innerHTML = greeter(user); 
+document.body.innerHTML = greeter(user);
